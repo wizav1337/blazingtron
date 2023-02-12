@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="window">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Unesi vrijednost servisa:</property>
+            <attributes>
+              <attribute name="size" value="15375"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">44</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="serviceSource">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">57</property>
+            <property name="y">75</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="serviceValue">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">€</property>
+            <attributes>
+              <attribute name="size" value="20480"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">-11</property>
+            <property name="y">74</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="serviceResult">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">€0.00</property>
+            <attributes>
+              <attribute name="size" value="20480"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">242</property>
+            <property name="y">74</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioDiscount7">
+            <property name="label" translatable="yes">  7% discount</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioDiscount10</property>
+            <signal name="toggled" handler="on_radioDiscount7_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">357</property>
+            <property name="y">45</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioDiscount10">
+            <property name="label" translatable="yes">10% discount</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioDiscount7</property>
+            <signal name="toggled" handler="on_radioDiscount10_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">357</property>
+            <property name="y">70</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioDiscount12">
+            <property name="label" translatable="yes">12% discount</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioDiscount7</property>
+            <signal name="toggled" handler="on_radioDiscount12_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">357</property>
+            <property name="y">95</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Popust:</property>
+            <attributes>
+              <attribute name="size" value="15375"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">374</property>
+            <property name="y">14</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Booster cut:</property>
+            <attributes>
+              <attribute name="size" value="15375"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">365</property>
+            <property name="y">137</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioCut30">
+            <property name="label" translatable="yes">30% Cut</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <signal name="toggled" handler="on_radioCut30_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">357</property>
+            <property name="y">170</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioCut35">
+            <property name="label" translatable="yes">35% Cut</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioCut30</property>
+            <signal name="toggled" handler="on_radioCut35_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">357</property>
+            <property name="y">195</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioCut40">
+            <property name="label" translatable="yes">40% Cut</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioCut30</property>
+            <signal name="toggled" handler="on_radioCut40_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">357</property>
+            <property name="y">220</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnExit">
+            <property name="label" translatable="yes">Izlaz</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">361</property>
+            <property name="y">258</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Obračunati booster cut:</property>
+            <attributes>
+              <attribute name="size" value="15375"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">124</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="serviceBoosterCut">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">€0.00</property>
+            <attributes>
+              <attribute name="size" value="30720"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">71</property>
+            <property name="y">153</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Instant copy-paste (booster note)</property>
+            <attributes>
+              <attribute name="size" value="15375"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">205</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="serviceBoosterNote">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Platform - €__ - Service Name</property>
+            <attributes>
+              <attribute name="foreground" value="#eded33333b3b"/>
+              <attribute name="background" value="#dededddddada"/>
+              <attribute name="size" value="15375"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">250</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
