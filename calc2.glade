@@ -6,7 +6,7 @@
     <property name="can-focus">False</property>
     <property name="resizable">False</property>
     <child>
-      <object class="GtkFixed">
+      <object class="GtkFixed" id="fixed1">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <child>
@@ -200,7 +200,7 @@
         </child>
         <child>
           <object class="GtkButton" id="btnExit">
-            <property name="label" translatable="yes">Izlaz</property>
+            <property name="label" translatable="yes">Exit</property>
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
@@ -263,11 +263,13 @@
             <property name="height-request">46</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="label" translatable="yes">-waiting-</property>
             <attributes>
               <attribute name="foreground" value="#eded33333b3b"/>
               <attribute name="background" value="#dededddddada"/>
-              <attribute name="size" value="25615"/>
+              <attribute name="size" value="16399"/>
             </attributes>
+            <signal name="copy-clipboard" handler="on_serviceBoosterNote_copy_clipboard" swapped="no"/>
           </object>
           <packing>
             <property name="x">15</property>
@@ -294,7 +296,8 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="width-chars">53</property>
+            <property name="width-chars">48</property>
+            <signal name="changed" handler="on_serviceSourceName_changed" swapped="no"/>
           </object>
           <packing>
             <property name="x">20</property>
@@ -303,10 +306,9 @@
         </child>
         <child>
           <object class="GtkLabel">
-            <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Click on the generated red booster note for COPY</property>
+            <property name="label" translatable="yes">By using 'Copy Note Button' copy this: to Clipboard!      </property>
             <attributes>
               <attribute name="size" value="15375"/>
             </attributes>
@@ -394,11 +396,12 @@
         </child>
         <child>
           <object class="GtkButton" id="btnAbout">
-            <property name="label" translatable="yes">About</property>
+            <property name="label" translatable="yes">Copy Note</property>
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_btnAbout_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="x">361</property>

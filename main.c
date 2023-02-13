@@ -23,6 +23,7 @@ GtkWidget	*radioCut30;
 GtkWidget	*radioCut35;
 GtkWidget	*radioCut40;
 GtkWidget	*btnExit;
+GtkWidget	*btnAbout;
 GtkWidget	*serviceBoosterCut;
 GtkWidget	*serviceBoosterNote;
 GtkWidget	*serviceResult;
@@ -49,6 +50,8 @@ int main(int argc, char *argv[]) {
 	g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 	
 
+	
+
         gtk_builder_connect_signals(builder, NULL);
 
 	fixed1 = GTK_WIDGET(gtk_builder_get_object(builder, "fixed1"));
@@ -61,6 +64,7 @@ int main(int argc, char *argv[]) {
 	radioCut35 = GTK_WIDGET(gtk_builder_get_object(builder, "radioCut35"));
 	radioCut40 = GTK_WIDGET(gtk_builder_get_object(builder, "radioCut40"));
 	btnExit = GTK_WIDGET(gtk_builder_get_object(builder, "btnExit"));
+	btnAbout = GTK_WIDGET(gtk_builder_get_object(builder, "btnAbout"));
 	serviceBoosterCut = GTK_WIDGET(gtk_builder_get_object(builder, "serviceBoosterCut"));
 	serviceBoosterNote = GTK_WIDGET(gtk_builder_get_object(builder, "serviceBoosterNote"));
 	serviceResult = GTK_WIDGET(gtk_builder_get_object(builder, "serviceResult"));
@@ -76,6 +80,17 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 	}
+
+
+  void on_serviceBoosterNote_clicked(GtkWidget *widget, GdkEventButton *event, gpointer data) {
+
+  const gchar *text = gtk_label_get_text(GTK_LABEL(serviceBoosterNote));
+  GtkClipboard *clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
+  gtk_clipboard_set_text(clipboard, text, -1);
+    }
+
+
+
 
 void on_serviceSource_changed(GtkEntry *entry) {
 
@@ -170,8 +185,9 @@ void on_radioCut40_toggled(GtkRadioButton *b) {
 
 void on_serviceSourceName_changed(GtkEntry *entry2) {
 	const gchar *text2 = gtk_entry_get_text(entry2);
-	double value2 = g_ascii_strtod(text2, NULL);
+	float value2 = g_ascii_strtod(text2, NULL);
 	gchar *gplat = "X"; 
+	
 
 	if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(radioPlatformSherpa))) {
 		gplat = "Sherpa";
@@ -183,12 +199,58 @@ void on_serviceSourceName_changed(GtkEntry *entry2) {
 		gplat = "PS4";
 	}
 
-	gchar result2[100];
-	setlocale(LC_ALL, "");
-	snprintf(result2, 100, "€%.2lf", value2);
-	gtk_label_set_text(GTK_LABEL(serviceBoosterNote), result2);
+	const gchar *cut = gtk_label_get_text(GTK_LABEL(serviceBoosterCut));
+	gchar result[100];
+	snprintf(result, 100, "%s - %s - %s", gplat, cut, text2);
+	gtk_label_set_text(GTK_LABEL(serviceBoosterNote), result);
+
+	GtkWidget *event_box = gtk_event_box_new();
+g_signal_connect(event_box, "button-press-event", G_CALLBACK(on_serviceBoosterNote_clicked), NULL);
+
+
+	
+	
 }
 
+
+void on_radioPlatformSherpa_toggled(GtkRadioButton *b) {
+	gboolean T = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(b));
+	if (T) {
+		on_serviceSourceName_changed(GTK_ENTRY(serviceSourceName));
+	}
+}
+
+void on_radioPlatformXBOX_toggled(GtkRadioButton *b) {
+	gboolean T = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(b));
+	if (T) {
+		on_serviceSourceName_changed(GTK_ENTRY(serviceSourceName));
+	}
+}
+
+void on_radioPlatformPS4_toggled(GtkRadioButton *b) {
+	gboolean T = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(b));
+	if (T) {
+		on_serviceSourceName_changed(GTK_ENTRY(serviceSourceName));
+	}
+}
+
+void on_radioPlatformPC_toggled(GtkRadioButton *b) {
+	gboolean T = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(b));
+	if (T) {
+		on_serviceSourceName_changed(GTK_ENTRY(serviceSourceName));
+	}
+}
+
+
+void copy_serviceBoosterNote_to_clipboard() {
+  on_serviceBoosterNote_clicked(NULL, NULL, NULL);
+}
+
+void on_btnAbout_clicked(GtkButton *button, gpointer user_data) {
+  const gchar *label_text = gtk_label_get_text(GTK_LABEL(serviceBoosterNote));
+  GtkClipboard *clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
+  gtk_clipboard_set_text(clipboard, label_text, -1);
+}
 	
 void on_btnExit_clicked (GtkButton *b) {
 gtk_main_quit();
