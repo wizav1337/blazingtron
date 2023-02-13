@@ -156,6 +156,7 @@
             <property name="receives-default">False</property>
             <property name="active">True</property>
             <property name="draw-indicator">True</property>
+            <property name="group">radioCut40</property>
             <signal name="toggled" handler="on_radioCut30_toggled" swapped="no"/>
           </object>
           <packing>
@@ -172,7 +173,7 @@
             <property name="receives-default">False</property>
             <property name="active">True</property>
             <property name="draw-indicator">True</property>
-            <property name="group">radioCut30</property>
+            <property name="group">radioCut40</property>
             <signal name="toggled" handler="on_radioCut35_toggled" swapped="no"/>
           </object>
           <packing>
@@ -246,31 +247,31 @@
             <property name="width-request">100</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Instant copy-paste (booster note)</property>
+            <property name="label" translatable="yes">Optional:  Enter the service name:</property>
             <attributes>
               <attribute name="size" value="15375"/>
             </attributes>
           </object>
           <packing>
             <property name="x">15</property>
-            <property name="y">205</property>
+            <property name="y">329</property>
           </packing>
         </child>
         <child>
           <object class="GtkLabel" id="serviceBoosterNote">
             <property name="width-request">100</property>
+            <property name="height-request">46</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Platform - €__ - Service Name</property>
             <attributes>
               <attribute name="foreground" value="#eded33333b3b"/>
               <attribute name="background" value="#dededddddada"/>
-              <attribute name="size" value="15375"/>
+              <attribute name="size" value="25615"/>
             </attributes>
           </object>
           <packing>
             <property name="x">15</property>
-            <property name="y">250</property>
+            <property name="y">430</property>
           </packing>
         </child>
         <child>
@@ -286,6 +287,135 @@
           <packing>
             <property name="x">15</property>
             <property name="y">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="serviceSourceName">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="width-chars">53</property>
+          </object>
+          <packing>
+            <property name="x">20</property>
+            <property name="y">361</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Click on the generated red booster note for COPY</property>
+            <attributes>
+              <attribute name="size" value="15375"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">401</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioPlatformPC">
+            <property name="label" translatable="yes">PC Platform</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioPlatformSherpa</property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">220</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioPlatformPS4">
+            <property name="label" translatable="yes">PS4 Platform</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioPlatformSherpa</property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">245</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioPlatformXBOX">
+            <property name="label" translatable="yes">XBOX Platform</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioPlatformSherpa</property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">270</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="radioPlatformSherpa">
+            <property name="label" translatable="yes">Sherpa</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">radioPlatformPC</property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">295</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">VIP price:</property>
+            <attributes>
+              <attribute name="size" value="15375"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">240</property>
+            <property name="y">44</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnAbout">
+            <property name="label" translatable="yes">About</property>
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">361</property>
+            <property name="y">297</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixbuf">blazing.png</property>
+          </object>
+          <packing>
+            <property name="x">213</property>
+            <property name="y">157</property>
           </packing>
         </child>
       </object>
